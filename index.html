@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#080e20" />
+  <title>WorldLang Web — Playground</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="ambient ambient-a"></div>
+  <div class="ambient ambient-b"></div>
+
+  <header class="topbar">
+    <a class="brand" href="#" aria-label="WorldLang Web home">
+      <span class="brand-mark"><span></span><span></span><span></span></span>
+      <span class="brand-name">world<span>lang</span><small>WEB STUDIO</small></span>
+    </a>
+    <div class="topbar-center"><span class="status-dot"></span><span>PLAYGROUND</span><span class="topbar-divider"></span><span class="topbar-version">RUNTIME PREVIEW</span></div>
+    <div class="topbar-actions">
+      <button id="newFileBtn" class="icon-button" title="New file" aria-label="New file">＋</button>
+      <button id="downloadBtn" class="icon-button" title="Download .world file" aria-label="Download file"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v11m-4-4 4 4 4-4M4 17v3h16v-3"/></svg></button>
+      <button id="settingsBtn" class="icon-button" title="Settings" aria-label="Settings"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="m19.4 15 .1.1 1.4 1.1-1.5 2.6-1.7-.6a7.9 7.9 0 0 1-1.6.9l-.3 1.8h-3l-.3-1.8a7.9 7.9 0 0 1-1.6-.9l-1.7.6-1.5-2.6 1.4-1.1a7.2 7.2 0 0 1 0-1.9l-1.4-1.1 1.5-2.6 1.7.6a7.9 7.9 0 0 1 1.6-.9l.3-1.8h3l.3 1.8a7.9 7.9 0 0 1 1.6.9l1.7-.6 1.5 2.6-1.4 1.1a7.2 7.2 0 0 1 0 1.8Z"/></svg></button>
+    </div>
+  </header>
+
+  <main class="app-shell">
+    <section class="welcome-row">
+      <div>
+        <div class="eyebrow"><span class="eyebrow-line"></span> CODE WITHOUT BORDERS</div>
+        <h1>Your ideas, <span>your language.</span></h1>
+        <p class="subtitle">A multilingual space to think, write, and build.</p>
+      </div>
+      <div class="runtime-pill"><span class="pulse"></span><span>WORLDLANG WEB</span><span class="pill-divider"></span><span id="runtimeStatus">READY</span></div>
+    </section>
+
+    <section class="workspace" aria-label="WorldLang editor">
+      <div class="workspace-toolbar">
+        <div class="file-tab active-tab">
+          <span class="file-icon">W</span>
+          <span id="fileNameLabel">untitled.world</span>
+          <span class="unsaved-dot" id="unsavedDot"></span>
+        </div>
+        <div class="toolbar-spacer"></div>
+        <label class="language-select-wrap" for="languageSelect"><span class="language-globe">◎</span>
+          <select id="languageSelect" aria-label="Programming language">
+            <option value="English_KW">English</option>
+            <option value="Arabic_KW">العربية — Arabic</option>
+            <option value="Persian_KW">فارسی — Persian</option>
+            <option value="Chinese_KW">中文 — Chinese</option>
+            <option value="French_KW">Français — French</option>
+            <option value="Spanish_KW">Español — Spanish</option>
+            <option value="German_KW">Deutsch — German</option>
+            <option value="Italian_KW">Italiano — Italian</option>
+            <option value="Dutch_KW">Nederlands — Dutch</option>
+            <option value="Portuguese_KW">Português — Portuguese</option>
+            <option value="Russian_KW">Русский — Russian</option>
+            <option value="Turkish_KW">Türkçe — Turkish</option>
+            <option value="Urdu_KW">اردو — Urdu</option>
+            <option value="Hindi_KW">हिन्दी — Hindi</option>
+            <option value="Japanese_KW">日本語 — Japanese</option>
+            <option value="Korean_KW">한국어 — Korean</option>
+            <option value="Swedish_KW">Svenska — Swedish</option>
+            <option value="Finnish_KW">Suomi — Finnish</option>
+            <option value="Indonesian_KW">Bahasa Indonesia</option>
+            <option value="Polish_KW">Polski — Polish</option>
+            <option value="Romanian_KW">Română — Romanian</option>
+            <option value="Ukrainian_KW">Українська — Ukrainian</option>
+            <option value="Vietnamese_KW">Tiếng Việt — Vietnamese</option>
+            <option value="Greek_KW">Ελληνικά — Greek</option>
+            <option value="Irish_KW">Gaeilge — Irish</option>
+            <option value="Kurdish_KW">Kurdî — Kurdish</option>
+            <option value="Kazakh_KW">Қазақша — Kazakh</option>
+            <option value="Azerbaijani_KW">Azərbaycanca</option>
+            <option value="Latvian_KW">Latviešu — Latvian</option>
+            <option value="Malay_KW">Bahasa Melayu</option>
+            <option value="Uzbek_KW">O‘zbek — Uzbek</option>
+          </select>
+          <span class="chevron">⌄</span>
+        </label>
+        <button id="runBtn" class="run-button"><span class="run-icon">▶</span><span id="runLabel">Run</span><kbd>Ctrl ↵</kbd></button>
+      </div>
+
+      <div class="mobile-view-tabs" id="mobileViewTabs">
+        <button class="mobile-view-tab active" data-view="editor">Editor <span>&lt;/&gt;</span></button>
+        <button class="mobile-view-tab" data-view="output">Output <span class="mobile-output-dot"></span></button>
+      </div>
+
+      <div class="panels">
+        <section class="editor-panel panel" id="editorPanel">
+          <div class="panel-heading">
+            <div class="panel-heading-left"><span class="panel-symbol code-symbol">&lt;/&gt;</span><span>EDITOR</span><span class="panel-subtitle">SOURCE</span></div>
+            <div class="panel-heading-right"><span class="mini-indicator"></span><span id="editorLanguageLabel">ENGLISH</span><button class="small-icon-button" id="clearBtn" title="Clear editor" aria-label="Clear editor">⌫</button></div>
+          </div>
+          <div class="editor-body" id="editorBody" dir="ltr">
+            <div class="line-numbers" id="lineNumbers" aria-hidden="true">1</div>
+            <div class="code-stage">
+              <pre id="highlightLayer" aria-hidden="true"><code id="highlightCode"></code></pre>
+              <textarea id="codeInput" spellcheck="false" autocapitalize="off" autocomplete="off" autocorrect="off" aria-label="WorldLang source code" wrap="off"></textarea>
+              <div id="editorPlaceholder" class="editor-placeholder">Start writing something remarkable…</div>
+            </div>
+          </div>
+          <div class="editor-footer">
+            <span><span class="footer-live-dot"></span> <span id="editorModeLabel">WorldLang</span></span>
+            <span id="cursorPosition">Ln 1, Col 1</span>
+            <span>UTF-8</span>
+          </div>
+        </section>
+
+        <section class="output-panel panel" id="outputPanel">
+          <div class="panel-heading output-heading">
+            <div class="panel-heading-left"><span class="panel-symbol output-symbol">⌁</span><span>OUTPUT</span><span class="panel-subtitle">CONSOLE</span></div>
+            <div class="output-tabs" role="tablist" aria-label="Output panels">
+              <button class="output-tab active" data-output-tab="console" role="tab">Console</button>
+              <button class="output-tab" data-output-tab="details" role="tab">Details</button>
+            </div>
+            <button id="clearOutputBtn" class="small-icon-button" title="Clear output" aria-label="Clear output">⌫</button>
+          </div>
+          <div class="output-content" id="consoleView" role="tabpanel">
+            <div class="console-welcome" id="consoleWelcome">
+              <div class="console-orbit"><span></span><i></i></div>
+              <p class="console-title">Your output lives here.</p>
+              <p class="console-copy">Run your program to see the magic happen.</p>
+              <div class="console-shortcut"><kbd>Ctrl</kbd> <span>+</span> <kbd>↵</kbd> <span>to run</span></div>
+            </div>
+            <div class="console-stream" id="consoleStream" aria-live="polite"></div>
+            <form class="stdin-form" id="stdinForm" hidden>
+              <label for="stdinInput"><span class="stdin-prompt">›</span><span id="stdinPromptText">Program is waiting for input</span></label>
+              <div class="stdin-row"><input id="stdinInput" autocomplete="off" placeholder="Type input and press Enter…" /><button type="submit" aria-label="Send input">Send ↗</button></div>
+            </form>
+          </div>
+          <div class="output-content details-view" id="detailsView" role="tabpanel" hidden>
+            <div class="details-empty"><span class="details-icon">⌘</span><strong>Execution details</strong><p>Runtime information will appear here after you run a program.</p></div>
+            <dl class="details-list">
+              <div><dt>Language</dt><dd id="detailLanguage">English</dd></div>
+              <div><dt>Runtime</dt><dd>Skulpt + WorldLang API</dd></div>
+              <div><dt>Direction</dt><dd id="detailDirection">LTR</dd></div>
+              <div><dt>Last run</dt><dd id="detailLastRun">Not yet run</dd></div>
+            </dl>
+          </div>
+          <div class="output-footer"><span class="footer-live-dot" id="outputStatusDot"></span><span id="outputStatusText">Waiting for execution</span><span class="output-footer-spacer"></span><button id="copyOutputBtn" class="copy-output-btn">Copy output ↗</button></div>
+        </section>
+      </div>
+      <div class="workspace-bottom"><span><span class="bottom-mark">◈</span> Made for every mind, in every language.</span><span class="bottom-right"><span id="lineCountLabel">1 line</span><span class="bottom-separator"></span><span id="charCountLabel">0 chars</span></span></div>
+    </section>
+    <footer class="page-footer"><span>WORLDLANG WEB <span class="footer-version">· 2.0</span></span><span>BUILD SOMETHING THAT MATTERS.</span></footer>
+  </main>
+
+  <dialog id="settingsDialog" class="settings-dialog">
+    <form method="dialog" class="settings-card">
+      <div class="settings-header"><div><span class="eyebrow">PLAYGROUND CONFIG</span><h2>Runtime settings</h2></div><button class="icon-button" aria-label="Close settings">×</button></div>
+      <label class="setting-label" for="endpointInput">WorldLang API endpoint</label>
+      <input id="endpointInput" class="setting-input" type="url" placeholder="https://your-domain.example/api/run" />
+      <p class="setting-help">Expected JSON request: <code>{ "code": "...", "language": "English_KW" }</code>. The response should include transpiled Python in <code>python</code> or <code>transpiled_code</code>, plus optional <code>result</code> and <code>error</code>.</p>
+      <label class="setting-label" for="filenameInput">Download filename</label>
+      <input id="filenameInput" class="setting-input" value="untitled.world" maxlength="80" />
+      <div class="settings-actions"><button type="button" class="secondary-button" id="resetSettingsBtn">Reset</button><button type="button" class="primary-button" id="saveSettingsBtn">Save settings</button></div>
+    </form>
+  </dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="https://cdn.jsdelivr.net/npm/skulpt@1.2.0/dist/skulpt.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/skulpt@1.2.0/dist/skulpt-stdlib.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
