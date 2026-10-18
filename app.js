@@ -78,7 +78,7 @@
 
   const rtlLanguages = new Set(["Arabic_KW", "Persian_KW", "Urdu_KW"]);
   const state = {
-    endpoint: "http://127.0.0.1:8000//api/worldlang/run",
+    endpoint: "https://worldlang-web.vercel.app/api/worldlang/run",
     filename: "untitled.world",
     dirty: false,
     running: false,
