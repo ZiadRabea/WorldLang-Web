@@ -14,12 +14,12 @@
   <div class="ambient ambient-a"></div>
   <div class="ambient ambient-b"></div>
 
-  <header class="topbar">
-    <a class="brand" href="#" aria-label="WorldLang Web home">
+  <header class="topbar" style="margin-bottom: 20px;">
+    <a class="brand" href="https://ziadrabea.github.io/worldlanguage" aria-label="WorldLang Web home">
       <span class="brand-mark"><span></span><span></span><span></span></span>
-      <span class="brand-name">world<span>lang</span><small>WEB STUDIO</small></span>
+      <span class="brand-name">world<span>lang</span>
     </a>
-    <div class="topbar-center"><span class="status-dot"></span><span>PLAYGROUND</span><span class="topbar-divider"></span><span class="topbar-version">RUNTIME PREVIEW</span></div>
+    <div class="runtime-pill"><span class="pulse"></span><span>WORLDLANG Playground</span><span class="pill-divider"></span><span id="runtimeStatus" style="color: var(--green);">READY</span></div>
     <div class="topbar-actions">
       <button id="newFileBtn" class="icon-button" title="New file" aria-label="New file">＋</button>
       <button id="downloadBtn" class="icon-button" title="Download .world file" aria-label="Download file"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v11m-4-4 4 4 4-4M4 17v3h16v-3"/></svg></button>
@@ -28,14 +28,6 @@
   </header>
 
   <main class="app-shell">
-    <section class="welcome-row">
-      <div>
-        <div class="eyebrow"><span class="eyebrow-line"></span> CODE WITHOUT BORDERS</div>
-        <h1>Your ideas, <span>your language.</span></h1>
-        <p class="subtitle">A multilingual space to think, write, and build.</p>
-      </div>
-      <div class="runtime-pill"><span class="pulse"></span><span>WORLDLANG WEB</span><span class="pill-divider"></span><span id="runtimeStatus">READY</span></div>
-    </section>
 
     <section class="workspace" aria-label="WorldLang editor">
       <div class="workspace-toolbar">
@@ -79,7 +71,7 @@
             <option value="Malay_KW">Bahasa Melayu</option>
             <option value="Uzbek_KW">O‘zbek — Uzbek</option>
           </select>
-          <span class="chevron">⌄</span>
+          <span class="chevron">▼</span>
         </label>
         <button id="runBtn" class="run-button"><span class="run-icon">▶</span><span id="runLabel">Run</span><kbd>Ctrl ↵</kbd></button>
       </div>
