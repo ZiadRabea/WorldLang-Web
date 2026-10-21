@@ -12,7 +12,6 @@
 html { min-width: 320px; min-height: 100%; background: var(--bg); }
 body { margin: 0; min-height: 100vh; color: var(--text); font-family: var(--sans); background: radial-gradient(ellipse at 50% -30%, #142957 0%, transparent 53%), linear-gradient(145deg, #080e1e, #060a15 68%); overflow-x: hidden; }
 button, input, select, textarea { font: inherit; }
-textarea{field-sizing: content;}
 button { color: inherit; cursor: pointer; }
 .ambient { position: fixed; pointer-events: none; z-index: 0; filter: blur(90px); opacity: .13; border-radius: 50%; }
 .ambient-a { width: 320px; height: 320px; background: #245dff; top: 180px; left: -210px; }
@@ -71,7 +70,7 @@ kbd { font: 500 9px var(--mono); border: 1px solid rgba(255,255,255,.2); border-
 #highlightLayer, #codeInput { margin: 0; padding: 0 18px 0 0; border: 0; width: 100%; min-height: 100%; font: 12px/1.9 var(--mono); letter-spacing: 0; tab-size: 4; white-space: pre; overflow: visible; text-align: start; }
 #highlightLayer { pointer-events: none; position: relative; color: #d5e1ff; z-index: 1; }
 #highlightCode { display: block; min-height: 100%; }
-#codeInput { resize: none; position: absolute; inset: 0; z-index: 2; outline: none; color: transparent; caret-color: #b5c9ff; background: transparent; -webkit-text-fill-color: transparent; overflow: auto; }
+#codeInput { resize: none; position: absolute; inset: 0; z-index: 2; outline: none; color: transparent; caret-color: #b5c9ff; background: transparent; -webkit-text-fill-color: transparent; height: auto; }
 #codeInput::selection { background: rgba(75, 119, 255, .32); -webkit-text-fill-color: transparent; }
 #codeInput:focus { outline: none; }
 .editor-placeholder { position: absolute; top: 0; left: 0; color: #465a7e; font: 12px/1.9 var(--mono); pointer-events: none; }
