@@ -495,10 +495,6 @@
       runLabel.textContent = state.running ? "Running…" : "Run";
     } else switchMobileView(state.mobileView);
   });
-  codeInput.addEventListener('input', function(){
-    this.style.height = 'auto';
-    this.style.height = this.scrollHeight + 'px';
-  });
   // Tiny starter sample; language selection changes highlighting/direction, not source translation.
   codeInput.value = 'var greeting = "Hello, WorldLang!"\nprint(greeting)';
   state.dirty = false;
@@ -506,4 +502,7 @@
   setLanguageDirection();
   switchMobileView("editor");
 })();
-
+codeInput.addEventListener('input', function(){
+  this.style.height = 'auto';
+  this.style.height = this.scrollHeight + 'px';
+});
