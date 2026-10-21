@@ -502,6 +502,9 @@
   setLanguageDirection();
   switchMobileView("editor");
 })();
+
+const codeInput = document.getElementById("codeInput"); 
+
 codeInput.addEventListener('input', function(){
   this.style.height = 'auto';
   this.style.height = this.scrollHeight + 'px';
